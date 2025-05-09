@@ -1,0 +1,21 @@
+{
+    "name": "web-platform-yuwlhp",
+    "version": "0.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/khansqvkz/web-platform-yuwlhp.git",
+    "author": "Lucas Nguyen",
+    "license": "MIT",
+    "scripts": {
+        "start": "servor --reload"
+    },
+    "stackblitz": {
+        "installDependencies": true
+    },
+    "devDependencies": {
+        "prettier": "^3.3.3"
+    },
+    "dependencies": {
+        "servor": "^4.0.2"
+    }
+ }
+ 
