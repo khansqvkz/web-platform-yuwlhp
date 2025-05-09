@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .missed-box {
+        height: 400px;
+        width: 600px;
+        background-color: lightgrey;
+        position: absolute;
+        top: 40px;
+        left: 250px;
+      }
+
+      .crazy-box {
+        height: 60px;
+        width: 60px;
+        background-color: red;
+      }
+
+      .normal-box {
+        height: 60px;
+        width: 60px;
+        background-color: blue;
+      }
+
+      .score {
+        font-size: 25px;
+        position: absolute;
+        left: 495px;
+        top: 430px;
+      }
+
+      .number {
+        font-weight: bold;
+        font-size: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="missed-box" onclick="onHittingContainer()"></div>
+      <div class="crazy-box" onclick="onHittingNormalBox()"></div>
+      <div class="normal-box" onclick="onHittingCrazyBox()"></div>
+    </div>
+    <div class="score">My score:<span class="number"></span></div>
+    <script>
+      let score = 0;
+
+      let scoreElement = document.querySelector('.number');
+
+      function onHittingContainer() {
+        score = score - 1;
+        scoreElement.innerHTML = score;
+      }
+
+      function onHittingNormalBox() {
+        score = score - 1;
+        scoreElement.innerHTML = score;
+      }
+
+      function onHittingCrazyBox() {
+        score = score - 1;
+        scoreElement.innerHTML = score;
+      }
+    </script>
+  </body>
+</html>

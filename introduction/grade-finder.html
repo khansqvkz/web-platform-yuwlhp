@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+      }
+
+      .Check {
+        width: 210px;
+        height: 35px;
+        background-color: #333;
+        color: white;
+        border-radius: 20px;
+        border: none;
+        font-size: 20px;
+      }
+
+      .input {
+        padding-bottom: 20px;
+      }
+
+      .result {
+        font-size: 25px;
+        color: red;
+      }
+
+      .number {
+        padding-bottom: 20px;
+      }
+
+      .buttons {
+        padding-top: 25px;
+      }
+
+      .input {
+        padding-top: 10px;
+        font-size: 30px;
+        text-align: center;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="Title">Tell me my grade</h1>
+      <div class="number">
+        <input type="number" class="input" placeholder="My score..." />
+      </div>
+      <div class="checkGrade"></div>
+      <div class="result"></div>
+      <div class="buttons">
+        <button class="Check" onclick="checkGrade()">Check my grade</button>
+      </div>
+    </div>
+    <script>
+      function checkGrade() {
+        let studentScore = document.querySelector('.input').value;
+
+        console.log(studentScore);
+        let result;
+
+        if (studentScore >= 90) {
+          result = 'Your grade is A';
+        } else if (studentScore >= 80) {
+          result = 'Your grade is B';
+        } else if (studentScore >= 70) {
+          result = 'Your grade is C';
+        } else if (studentScore >= 60) {
+          result = 'Your grade is D';
+        } else {
+          result = 'Your grade is F';
+        }
+
+        document.querySelector('.result').innerHTML = result;
+      }
+
+      //
+    </script>
+  </body>
+</html>

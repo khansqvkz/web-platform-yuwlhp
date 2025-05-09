@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .butter {
+        border: 2px solid red;
+      }
+
+      .button1 {
+        color: red;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      class="butter"
+      src="https://th.bing.com/th/id/OIP.tRXEbrlMihJvGbqH6DEdTQHaKH?w=125&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+    />
+    <button class="Switch" onclick="Switching()">Switch Image</button>
+
+    <ul class="Ham"></ul>
+    <input class="House" /><button class="button1" onclick="Chesse()">
+      Add to List
+    </button>
+
+    <p class="paragraph ">Hello</p>
+    <button class="hide" onclick="disappear()">Hide/Show</button>
+
+    <script>
+      function Switching() {
+        let img = document.querySelector('.butter');
+        img.src =
+          'https://th.bing.com/th/id/OIP.BJOr6Q8H4SV9Fx4qiPFfqwHaHC?w=188&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7';
+      }
+
+      function Chesse() {
+        let list = document.querySelector('.Ham');
+        let input = document.querySelector('.House');
+        let inputValue = input.value;
+        list.innerHTML = inputValue;
+      }
+      // let button1 = document.querySelector('.button1')
+
+      // Exercise at home:
+      // Create 20 different HTML buttons
+      // Style each button to give them different color
+      // Select those 20 elements in Javascript
+
+      function disappear() {
+        let hiding = document.querySelector('.paragraph');
+
+        if (hiding.classList.contains('hidden')) {
+           hiding.classList.remove('hidden');
+        } else {
+            hiding.classList.add('hidden');
+        }
+   
+      }
+    </script>
+  </body>
+</html>

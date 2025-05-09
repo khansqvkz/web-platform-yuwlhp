@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .calculator {
+        display: flex;
+        justify-content: center;
+        margin-top: 220px;
+      }
+
+      body {
+        background-color: black;
+      }
+
+      .operation {
+        text-align: center;
+      }
+
+      .first-number {
+        text-align: center;
+      }
+
+      .sec-number {
+        text-align: center;
+      }
+
+      .equal {
+        color: white;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .result-button {
+        margin-left: 500px;
+        margin-top: 20px;
+        border-radius: 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 30px;
+        padding-left: 30px;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <input type="number" class="first-number" placeholder="1st number" />
+        <select class="operation">
+          <option value="Plus">Plus</option>
+          <option value="Minus">Minus</option>
+          <option value="Divide by">Divide by</option>
+          <option value="Time">Time</option>
+        </select>
+        <input type="number" class="sec-number" placeholder="2nd number" />
+        <div class="equal">=</div>
+        <input type="number" class="result" readonly />
+      </div>
+      <button class="result-button" onclick="calculate()">Calculate</button>
+    </div>
+    <script>
+      function calculate() {
+        let firstNumber = Number(document.querySelector('.first-number').value);
+
+        let secNumber = Number(document.querySelector('.sec-number').value);
+
+        let operator = document.querySelector('.operation').value;
+
+        console.log(firstNumber);
+        console.log(secNumber);
+        console.log(operator);
+        let result;
+
+        if (operator === 'Plus') {
+          result = firstNumber + secNumber;
+        } else if (operator === 'divide') {
+          result = firstNumber / secondNumber;
+        } else if (operator === 'time') {
+          result = firstNumber * secondNumber;
+        } else if (operator === 'minus') {
+          result = firstNumber - secondNumber;
+        }
+
+        console.log(result);
+
+        document.querySelector('.result').value = result;
+      }
+    </script>
+  </body>
+</html>

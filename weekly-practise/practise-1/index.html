@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>HTML Template</title>
+   <style>
+      .world {
+        width: 100px;
+        height: 50px;
+      }
+
+      .world2 {
+        width: 100px;
+        height: 50px;
+      }
+
+      .world3 {
+        width: 100px;
+        height: 50px;
+      }
+   </style>
+ </head>
+ <body>
+   <button class="world" onclick="popUpMessage()">hello world</button>
+   <button class="world2" onclick="popUpMessage2('hello world 2')">hello world 2</button>
+   <button class="world3" onclick="changeMyLabel('change my label')">change my label</button>
+   <script>
+     function popUpMessage() {
+      alert('hello world')
+     }
+     function popUpMessage2(message) {
+       alert(message)
+     }
+     function changeMyLabel() {
+       let world3button = document.querySelector('.world3');
+       
+       world3button.innerHTML= 'Hello world 3'
+     }
+   </script>
+ </body>
+</html>

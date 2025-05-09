@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>HTML Template</title>
+   <style>
+     .potato {
+       width: 150px;
+       height: 50px;
+     }
+     .pizza {
+       width: 150px;
+       height: 50px;
+     }
+     .chesse {
+       width: 50px;
+       height: 25px;
+     }
+
+   </style>
+ </head>
+ <body>
+   <button class="potato" onclick="messagePopUp()"></button>
+
+   <button class="pizza" onclick="messagechoise('My name is Lucas')"></button>
+
+   <button class="tomato" onclick="messageChange()">Change </button>
+   <div class="apple">Empty</div>
+
+   <input class="text" placeholder="type something...">
+   <button class="chesse" onclick="popupinput()"></button>
+
+   <div class="emptyButton">Another empty Div...</div>
+   <input class="anotherText" placeholder="type something...">
+   <button class="bacon" onclick="inputchange()">Change div content based on input</button>
+
+   <div class="waiting">Waiting for result...</div>
+   <input class="type" placeholder="Type a number">
+   <button class="sauce" onclick="numberPopUp()">Check if number is larger than 100</button>
+
+   <script>
+     function messagePopUp() {
+       alert('Hello')
+     }
+     function messagechoise(message) {
+       alert(message)
+     }
+     function messageChange() {
+       let messageChangeButton = document.querySelector('.apple');
+       messageChangeButton.innerHTML= 'My label has been changed';
+     }
+     function popupinput() {
+       let myInput = document.querySelector('.text');
+       let myInputValue = myInput.value;
+
+       alert(myInputValue);
+     }
+     function inputchange() {
+       let inputbutton = document.querySelector('.anotherText');
+       let inputValue = input.value
+       document.querySelector('.anotherText').value = input.value;
+     }
+     function numberPopUp() {
+       let input = document.querySelector('.type');
+       let waiting = document.querySelector('.waiting')
+       let inputValue = input.value;
+       if(inputValue > 100){
+         result.innerHTML = `Your number ${inputValue} is bigger then 100.`;
+       } else if (inputValue < 100) {
+         result.innerHTML = `Your number ${inputValue} is smaller thhen 100.`;
+       } else {
+         result.innerHTML = `Your number ${inputValue} is exactly 100.`;
+       }
+     }
+   </script>
+ </body>
+</html>

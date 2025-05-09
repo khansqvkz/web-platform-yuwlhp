@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue riding hood</title>
+    <link rel="stylesheet" type="text/css" href="global.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <style>
+      .background-room {
+        width: 1060px;
+        height: 480px;
+      }
+
+      @keyframes ani-bomb-2 {
+        20% {
+          bottom: 300px;
+          left: 300px;
+          opacity: 1;
+        }
+        40% {
+          bottom: 100px;
+          left: 500px;
+          opacity: 0.2;
+          transform: scale(1.5);
+        }
+        60% {
+          bottom: 300px;
+          left: 800px;
+          opacity: 1;
+          transform: scale(1);
+        }
+        80% {
+          bottom: 100px;
+          left: 800px;
+          transform: scale(2);
+        }
+        100% {
+          transform: scale(1);
+          bottom: 100px;
+          left: 200px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes ani-bomb-1 {
+        50% {
+          left: 800px;
+        }
+        100% {
+          left: 300px;
+        }
+      }
+
+      @keyframes ani-number-3 {
+        25% {
+          opacity: 0;
+          transform: scale(2);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        75% {
+          opacity: 0;
+          transform: scale(2);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes ani-number-5 {
+        30% {
+          left: 500px;
+          bottom: 300px;
+          opacity: 0;
+        }
+        60% {
+          left: 700px;
+          bottom: 200px;
+          opacity: 0.5;
+        }
+        80% {
+          opacity: 0;
+        }
+        100% {
+          left: 300px;
+          bottom: 200px;
+          opacity: 1;
+        }
+      }
+
+      .a-bomb {
+        position: absolute;
+        bottom: 130px;
+        left: 300px;
+        width: 100px;
+        animation: ani-bomb-1 3s forwards infinite;
+        animation-delay: 2s;
+      }
+
+      .b-bomb {
+        position: absolute;
+        bottom: 130px;
+        left: 350px;
+        width: 100px;
+        opacity: 0;
+        animation: ani-bomb-2 6s forwards infinite;
+        animation-delay: 2s;
+      }
+
+      .room {
+        position: relative;
+      }
+
+      .number {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50px;
+        box-shadow: 0 0 20px black;
+      }
+
+      .highlighted {
+        font-size: 30px;
+        width: 800px;
+        text-align: center;
+        padding-bottom: 20px;
+      }
+
+      .title {
+        width: 720px;
+        text-align: center;
+        padding-bottom: 20px;
+      }
+
+      .bottom-text {
+        padding-bottom: 20px;
+      }
+
+      .number-3 {
+        left: 548px;
+        bottom: 232px;
+        animation: ani-number-3 3s forwards infinite;
+        animation-delay: 2s;
+      }
+
+      .number-5 {
+        text-decoration: none;
+        color: black;
+        left: 290px;
+        bottom: 200px;
+        animation: ani-number-5 3s forwards infinite;
+        animation-delay: 2s;
+      }
+
+      .number-7 {
+        left: 350px;
+        bottom: 150px;
+        animation: ani-number-7 4s forwards infinite;
+        animation-delay: 2s;
+      }
+
+      @keyframes ani-number-7 {
+        30% {
+          left: 750px;
+          bottom: 250px;
+        }
+        60% {
+          left: 250px;
+          bottom: 300px;
+        }
+        100% {
+          left: 350px;
+          bottom: 150px;
+        }
+      }
+
+      .blue-riding-hood-img {
+        width: 140px;
+        position: absolute;
+        z-index: 3;
+        left: 330px;
+        bottom: -250px;
+        animation: move-from-bottom 3s forwards;
+        animation-delay: 2s;
+      }
+
+      @keyframes move-from-bottom {
+        100% {
+          bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body class="indie-flower-regular">
+    <div class="container">
+      <div class="page page-4 tilt-in-fwd-tr">
+        <div class="title">
+          <span class="blue">Blue</span> stands in front of the mysterious door,
+          puzzled by a riddle inscribed on a mysterious door. The riddle reads.
+        </div>
+
+        <div class="highlighted">
+          <span class="text-bold"
+            >I am not alive, but I grow; I don't have lungs, but I need air; I
+            don't have a mouth, but water kills me. What number am I?"</span
+          >
+        </div>
+
+        <div class="bottom-text">
+          What should Blue Riding Hood press to open the door?
+        </div>
+
+        <div class="room">
+          <img
+            class="background-room"
+            src="https://img.freepik.com/free-vector/abandoned-dungeon-medieval-castle-night-interior-with-moonlight-fall-wood-arched-door-barred-window-shadow-cracked-stone-wall-with-spiderweb-dilapidated-palace-cartoon-vector-illustration_107791-7764.jpg?t=st=1718321535~exp=1718325135~hmac=6521aff0ab463f98b2414c5859e708ae12e0eecb4ed1742f04cce9b99eeb7197&w=1380"
+          />
+          <a class="number-3 number">3</a>
+          <a href="page-6.html" class="number-5 number">5</a>
+          <a class="number-7 number">7</a>
+          <a href="losing-bomb-ending.html" class="bomb">
+            <img
+              class="a-bomb"
+              src="https://static.vecteezy.com/system/resources/thumbnails/021/125/685/small_2x/bomb-flat-icon-png.png"
+            />
+          </a>
+          <a href="losing-bomb-ending.html" class="bomb">
+            <img
+              class="b-bomb"
+              src="https://static.vecteezy.com/system/resources/thumbnails/021/125/685/small_2x/bomb-flat-icon-png.png"
+            />
+          </a>
+        </div>
+        <img
+          class="blue-riding-hood-img"
+          src="https://labs.learnosity.com/solutions/sales-enablement/custom-ui/blue-riding-hood/assets/img/blueridinghood.png"
+        />
+      </div>
+    </div>
+  </body>
+</html>

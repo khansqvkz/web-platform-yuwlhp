@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+      }
+
+      .button {
+        width: 200px;
+        height: 45px;
+        background-color: crimson;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        font-size: 20px;
+      }
+
+      .buttons {
+        margin: 40px;
+      }
+
+      .text {
+        padding-bottom: 20px;
+      }
+
+      .result {
+        font-size: 22px;
+        text-decoration: underline;
+        color: red;
+        padding-top: 25px;
+      }
+
+      .buttons :hover{
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="intro">Guess the number</h1>
+      <div class="text">
+        Pick your number range. If the robot randomly picks a number within the
+        range you pick, you WIN!
+      </div>
+
+      <div class="player-choice"></div>
+      <div class="robot-choice"></div>
+      <div class="result"></div>
+
+      <div class="buttons">
+        <button class="button" onclick="PickRange(0, 10)">0-10</button>
+        <button class="button" onclick="PickRange(11, 20)">11-20</button>
+        <button class="button" onclick="PickRange(21, 30)">21-30</button>
+      </div>
+    </div>
+    <script>
+      function PickRange(min, max) {
+        let randomNumber = Math.round(Math.random() * 30);
+        let robotChoice;
+
+        let playerChoiceMessage = `Player picks: ${min}- ${max}`;
+        document.querySelector('.player-choice').innerHTML =
+          playerChoiceMessage;
+
+        let robotChoiceMessage = `Computer picks: number ${randomNumber}`;
+        document.querySelector('.robot-choice').innerHTML = robotChoiceMessage;
+
+        let resultMessage;
+
+        if (randomNumber >= min && randomNumber <= max) {
+          resultMessage = 'You WIN!';
+        } else {
+          resultMessage = 'You LOSE!';
+        }
+
+        document.querySelector('.result').innerHTML = resultMessage;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <button class="cheese" onclick="popUp()">Button 1</button>
+    <button class="butter" onclick="changePopUp()">Button 2</button>
+    <button class="dough" onclick="weatherPopUp()">
+      🌧️ Change the weather
+    </button>
+    <div class="text">Howdy, what a nice day</div>
+
+    <input class="pizza" type="number" min="0" max="10" />
+    <button class="pineapple" onclick="gradeCheck()">Check result</button>
+    <div class="gradeFinder">Grade result</div>
+
+    <input class="potato" type="number"/>
+    <input class="happy" type="number"/>
+
+    <script>
+      function popUp() {
+        alert('Hello world');
+      }
+      function changePopUp() {
+        let button = document.querySelector('.butter');
+        let buttonText = button.innerHTML;
+        alert(buttonText);
+      }
+      function weatherPopUp() {
+        let weatherPopUpbutton = document.querySelector('.text');
+        weatherPopUpbutton.innerHTML = 'Oh my, what a rainy day!';
+      }
+      function gradeCheck() {
+        // Step 1.I need to get the value that the user put in the input
+        // - Select the input and save it to a variable
+        let input = document.querySelector('.pizza');
+        // - Get the input value and save it to a variable
+        let inputValue = input.value;
+        let result = document.querySelector('.gradeFinder');
+        if (inputValue == 10) {
+          result.innerHTML = `Fantastic! I have nothing else to teach you`;
+        } else if (inputValue >= 7 && inputValue <=9) {
+          result.innerHTML = `Great job, but you still have a long way to go`;
+        } else if (inputValue >=4 && inputValue <=6) {
+          result.innerHTML = `Mate, try harder next timeo`;
+        } else if (inputValue >=1 && inputValue <=3) {
+          result.innerHTML = `Our center is open 24/7, the reception is over there`;
+        } else {
+          result.innerHTML = 'I give up';
+        }
+      }
+    </script>
+  </body>
+</html>

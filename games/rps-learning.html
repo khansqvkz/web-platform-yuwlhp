@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rock - Paper - Scissor</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button onclick="playerPick('rock')">Rock</button>
+      <button onclick="playerPick('paper')">Paper</button>
+      <button onclick="playerPick('scissor')">Scissor</button>
+      <div class="player-choice">Player picks: ???</div>
+      <div class="robot-choice">Robot picks: ???</div>
+      <div class="result">The winner is: ???</div>
+    </div>
+    <script>
+      function playerPick(choice) {
+        let randomNumber = Math.round(Math.random() * 2);
+        let robotChoice;
+
+        console.log('Random number', randomNumber);
+
+        if (randomNumber === 0) {
+          robotChoice = 'rock';
+        } else if (randomNumber === 1) {
+          robotChoice = 'paper';
+        } else {
+          robotChoice = 'scissor';
+        }
+
+        console.log('Robot choice', robotChoice);
+
+        let message = `Player picks: ${choice}`;
+
+        document.querySelector('.player-choice').innerHTML = message;
+
+        let Robotmessage = `Robot picks: ${robotChoice}`;
+
+        document.querySelector('.robot-choice').innerHTML = Robotmessage;
+
+        let winner;
+        if (choice === 'rock' && robotChoice === 'paper') {
+          winner = 'Robot';
+        } else if (choice === 'rock' && robotChoice === 'scissor') {
+          winner = 'Player';
+        } else if (choice === 'paper' && robotChoice === 'rock') {
+          winner = 'Player';
+        } else if (choice === 'paper' && robotChoice === 'scissor') {
+          winner = 'Robot';
+        } else if (choice === 'scissor' && robotChoice === 'paper') {
+          winner = 'Player';
+        } else if (choice === 'scissor' && robotChoice === 'rock') {
+          winner = 'Robot';
+        } else {
+          winner = 'Draw';
+        }
+
+        console.log('winner', winner);
+
+        let resultMessage;
+
+        if (winner === 'Draw') {
+          resultMessage = 'Draw';
+        } else {
+          resultMessage = `The winner is: ${winner}`;
+        }
+
+        document.querySelector('.result').innerHTML = resultMessage;
+      }
+    </script>
+  </body>
+</html>

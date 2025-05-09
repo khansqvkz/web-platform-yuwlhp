@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .red {
+        background-color: red;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .green {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .purple {
+        background-color: purple;
+      }
+      .pink {
+        background-color: pink;
+      }
+
+      .colorchange {
+        border-radius: 15px;
+        width: 150px;
+        height: 40px;
+        color: white;
+        background-color: #333;
+        border: none;
+        transition: all 0.3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container red">
+      <button class="colorchange" onclick="change()">Change the color</button>
+    </div>
+    <script>
+      function change() {
+        let container = document.querySelector('.container');
+
+        if (container.classList.contains('red')) {
+          container.classList.remove('red');
+          container.classList.add('orange');
+        } else if (container.classList.contains('orange')) {
+          container.classList.remove('orange');
+          container.classList.add('yellow');
+        } else if (container.classList.contains('yellow')) {
+          container.classList.remove('yellow');
+          container.classList.add('green');
+        } else if (container.classList.contains('green')) {
+          container.classList.remove('green');
+          container.classList.add('blue');
+        }
+      }
+    </script>
+  </body>
+</html>

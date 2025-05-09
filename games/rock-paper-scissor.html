@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rock - Paper - Scissor</title>
+    <meta name="robots" content="noindex" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        background-color: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        height: 100vh;
+        font-family: 'Pixelify Sans', sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .container {
+        position: absolute;
+      }
+
+      .device {
+        width: 1150px;
+        height: 500px;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+      }
+
+      .game-background {
+        position: absolute;
+        height: 445px;
+        top: 25px;
+        left: 180px;
+        border-radius: 9px;
+        border: 1px solid black;
+        z-index: 2;
+      }
+
+      .button-choices {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        padding: 30px;
+        top: 60px;
+        right: 250px;
+        display: flex;
+        gap: 20px;
+        box-shadow: 0 0 10px black;
+        z-index: 3;
+      }
+
+      .decorator {
+        position: absolute;
+        bottom: -40px;
+        left: 60px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-top-color: rgba(255, 255, 255, 0.9);
+      }
+
+      .fa-solid {
+        width: 50px;
+        height: 50px;
+        padding-top: 15px;
+      }
+
+      .board {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        top: 50px;
+        left: 210px;
+        border: 1px solid black;
+        box-shadow: 0 20px 40px rgba(255, 0, 0, 0.7);
+        z-index: 4;
+      }
+
+      .screen {
+        position: absolute;
+        width: 336px;
+        height: 200px;
+        top: 0;
+        left: 0;
+      }
+
+      .choices :hover {
+        background-color: hotpink;
+        border-color: deeppink;
+        color: white;
+        transform: scale(1.2, 1.2);
+        border-radius: 20px;
+        width: 56px;
+        height: 58px;
+      }
+
+      .button-choices .choices {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+        border-radius: 20px;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        class="device"
+        src="https://www.nintendo.com/eu/media/images/08_content_images/systems_5/nintendo_switch_3/nintendo_switch_oled/CI_NSwitch_big_screen_bg.png"
+      />
+
+      <img class="game-background" src="https://i.redd.it/x4hnwsvps4h91.gif" />
+      <div class="board">
+        <img
+          class="screen"
+          src="https://media2.giphy.com/media/tJbWmi9jkdsdG8tIJS/giphy-downsized.gif"
+        />
+
+        <div class="player-icon"> <img src=""/> </div>
+      </div>
+
+      <div class="button-choices">
+        <div class="decorator"></div>
+        <button class="choices" onclick="playerPick('Rock')">
+          <i class="fa-solid fa-hand-back-fist"></i>
+        </button>
+        <button class="choices" onclick="playerPick('Paper')">
+          <i class="fa-solid fa-hand"></i>
+        </button>
+        <button class="choices" onclick="playerPick('Scissor')">
+          <i class="fa-solid fa-hand-scissors"></i>
+        </button>
+      </div>
+    </div>
+    <script>
+       function playerPick(choice) {
+        let randomNumber = Math.round(Math.random() * 2);
+        let robotChoice;
+
+        console.log('Random number', randomNumber);
+
+        if (randomNumber === 0) {
+          robotChoice = 'rock';
+        } else if (randomNumber === 1) {
+          robotChoice = 'paper';
+        } else {
+          robotChoice = 'scissor';
+        }
+
+        console.log('Robot choice', robotChoice);
+
+        let message = `Player picks: ${choice}`;
+
+        document.querySelector('.player-choice').innerHTML = message;
+
+        let Robotmessage = `Robot picks: ${robotChoice}`;
+
+        document.querySelector('.robot-choice').innerHTML = Robotmessage;
+
+        let winner;
+
+        if (choice === 'rock' && robotChoice === 'paper') {
+          winner = 'Robot';
+        } else if (choice === 'rock' && robotChoice === 'scissor') {
+          winner ='Player'
+        } else if (choice === 'paper' && robotChoice === 'rock') {
+          winner ='Player'
+        } else if (choice === 'paper' && robotChoice === 'scissor') {
+          winner ='Robot'
+        } else if (choice === 'scissor' && robotChoice === 'paper') {
+          winner ='Player'
+        } else if (choice === 'scissor' && robotChoice === 'rock') {
+          winner ='Robot'
+        } else {
+          winner="No-one"
+        }
+      }
+    </script>
+  </body>
+</html>

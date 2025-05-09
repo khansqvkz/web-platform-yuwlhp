@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Week-11</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+      }
+      .body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+      }
+      .footer {
+      }
+
+      .header-icon {
+        width: 36px;
+      }
+
+      .header-items {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .logo {
+       width: 300px;
+      }
+
+      .controls {
+      display: flex;
+      gap: 12px;
+      }
+
+      .controls button {
+      border: none;
+      background-color: lightgray;
+      border-radius: 4px;
+      color: black;
+      padding-left: 16px;
+      padding-right: 16px;
+      font-size: 14px;
+      height: 36px;
+      }
+
+      .footer {
+      background-color: lightgray;
+      }
+
+      .footer-top-section {
+       padding: 15px;
+       border-bottom-width: 1px;
+       border-bottom-color: gray;
+       border-bottom-style: solid;
+       }
+
+       .footer-bottom-section {
+       padding: 15px;
+       display: flex;
+       justify-content: space-between;
+       }
+
+       .footer-items {
+       display: flex;
+       gap: 20px;
+       }
+
+       .logo {
+       width: 300px;
+       }
+
+       .search img {
+       height: 30px;
+       }
+
+       .search {
+       position: relative;
+       }
+
+       .search-left-section {
+       position: absolute;
+       top: 2px;
+       left: 7px;
+       }
+
+       .search-right-section {
+       position: absolute;
+       top: 2px;
+       right: 7px;
+       }
+
+       .search-input {
+         border-radius: 15px;
+         height: 30px;
+         width: 500px;
+       }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-items">
+          <a>About</a>
+          <a>Store</a>
+        </div>
+
+        <div class="header-items">
+          <a>Gmail</a>
+          <a>Images</a>
+          <a>
+            <img
+              class="header-icon"
+              src="https://www.svgrepo.com/show/532198/list-ul-alt.svg"
+            />
+          </a>
+          <a>
+            <img
+              class="header-icon"
+              src="https://www.svgrepo.com/show/492689/avatar-boy.svg"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="body">
+      <div>
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" />
+      </div>
+
+      <div class="search">
+        <input class="search-input" />
+
+        <div class="search-left-section">
+          <img src="https://www.svgrepo.com/show/532554/search-alt.svg" />
+        </div>
+
+        <div class="search-right-section">
+          <img src="https://www.svgrepo.com/show/528402/microphone.svg" />
+          <img src="https://www.svgrepo.com/show/528090/camera-minimalistic.svg" />
+        </div>
+      </div>
+
+
+         <div class="controls">
+          <button>Google Search</button>
+          <button>I'm Feeling Lucky</button>
+       </div>
+      </div>
+      <div class="footer">Footer
+        <div class="footer-top-section">Australia</div>
+    
+        <div class="footer-bottom-section">
+            <div class="footer-items">
+               <a>Advertising</a>
+               <a>Business</a>
+               <a>How Search works</a>
+             </div>
+            <div class="footer-items">
+               <a>Privacy</a>
+               <a>Terms</a>
+               <a>Settings</a>    
+
+      </div>
+    </div>
+  </body>
+</html>

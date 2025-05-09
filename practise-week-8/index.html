@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      img {
+        width: 525px;
+        height: 575px;
+      }
+
+      .container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .content-section {
+        display: flex;
+        gap: 20px;
+        text-align: justify;
+        padding-top: 100px;
+        padding-left: 30px;
+        font-size: 12px;
+      }
+
+      body {
+        margin: 0;
+        position: relative;
+      }
+      .content-section div {
+        padding-bottom: 20px;
+      }
+
+      .space {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+      }
+      .cover-section {
+        position: relative;
+      }
+
+      .text {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        width: 120px;
+        height: 110px;
+        background-color: white;
+        text-align: center;
+        padding: 10px;
+        padding-bottom: 15px;
+        top: 150px;
+        left: calc(50% - 60px);
+        z-index: 3;
+      }
+
+      .box {
+        background-color: white;
+        position: absolute;
+        top: 150px;
+        padding: 70px;
+        z-index: 2;
+        left: calc(50% - 60px);
+        transform: rotate(45deg);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .line-up {
+        background-color: white;
+        padding: 5px;
+        position: absolute;
+        top: 1px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        height: 565px;
+        z-index: 1;
+        left: calc(50% - -5px);
+      }
+
+      .line-across {
+        background-color: white;
+        padding: 5px;
+        position: absolute;
+        top: 215px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        width: 535px;
+        z-index: 1;
+        left: calc(50% - 282.5px);
+      }
+
+      .bunny {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 325px;
+        left: 960px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cover-section">
+        <img
+          src="https://r2.erweima.ai/imgcompressed/compressed_800eb83437593b85014f654b7123448e.webp"
+        />
+
+        <div class="line-up"></div>
+        <div class="line-across"></div>
+        <div class="box"></div>
+        <div class="text">
+          In the heart of the forest, you find the quiet wisdom of nature and
+          the freedom to wander
+        </div>
+      </div>
+      <div class="content-section">
+        <div class="left-section">
+          <div>
+            The forest is a world of its own, filled with mystery and beauty. As
+            soon as you step under the canopy of trees, the air changes—it
+            becomes cooler, fresher, and alive with the sounds of rustling
+            leaves, chirping birds, and distant animal calls. Sunlight filters
+            through the branches, casting dappled shadows on the forest floor,
+            creating a peaceful, almost magical atmosphere.
+          </div>
+
+          <div>
+            Forests are home to an incredible variety of life. From towering
+            trees that have stood for centuries to the smallest insects, each
+            plays a vital role in the ecosystem. The balance of life here is
+            delicate but powerful, as every plant and creature contributes to
+            the health of the environment, working in harmony to sustain the
+            natural world.
+          </div>
+
+          <div>
+            Walking through a forest can be a deeply calming experience. The
+            gentle sway of the trees, the earthy scent of moss and soil, and the
+            sense of solitude can help clear your mind and bring a sense of
+            peace. It is a place where time slows down, and you can reconnect
+            with nature, far away from the hustle and bustle of everyday life.
+          </div>
+        </div>
+        <div class="right-section">
+          <div>
+            Forests also play a critical role in sustaining the planet. They
+            absorb carbon dioxide, produce oxygen, and provide habitats for
+            countless species. In many ways, forests are the lungs of the Earth,
+            purifying the air and regulating the climate, making them essential
+            for the well-being of all life forms.
+          </div>
+
+          <div>
+            In the end, the forest is more than just a collection of trees—it's
+            a reminder of the interconnectedness of all living things. It
+            teaches us to respect nature's rhythms and to understand that we are
+            just one part of a much larger, intricate system. A walk through the
+            woods is a journey not just through nature, but through ourselves.
+          </div>
+        </div>
+      </div>
+    </div>
+    <img
+      class="bunny"
+      src="https://i.pinimg.com/originals/8d/f4/8d/8df48d5a099955c76dd355c5891e071c.gif"
+    />
+  </body>
+</html>

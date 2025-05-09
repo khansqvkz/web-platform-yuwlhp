@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lucas</title>
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    body {
+      font-size: 14px;
+      background-color: #0e0e0e;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: red;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 70px;
+      height: 70px;
+      border-radius: 5px;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+    }
+
+    .menu a {
+      color: grey;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .menu .active {
+      color: white;
+      background-color: red;
+      border-radius: 4px;
+    }
+
+    .summary {
+      display: flex;
+      justify-content: space-evenly;
+      color: white;
+      margin-top: 50px;
+    }
+
+    .summary-item-title {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .summary-item-content {
+      display: flex;
+      text-align: center;
+      gap: 30px;
+    }
+
+    .summary-item-number {
+      font-size: 35px;
+    }
+
+    .summary-item-text {
+      color: grey;
+    }
+
+    .facts {
+      margin-top: 140px;
+      display: flex;
+      align-items: center;
+    }
+
+    .facts-image img {
+      width: 300px;
+    }
+
+    .facts-image {
+      flex: 1;
+    }
+
+    .facts-content {
+      flex: 1;
+    }
+
+    .facts-title {
+      font-size: 30px;
+      border-bottom: 4px solid red;
+    }
+
+    .facts-content li {
+      margin-bottom: 15px;
+    }
+
+    .favourite-title {
+      font-size: 30px;
+      border-bottom: 4px solid red;
+    }
+
+    .favourite-content {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .favourite {
+      margin-top: 140px;
+      margin-bottom: 140px;
+    }
+
+    .animated-rainbow {
+      animation: rainbowShadow 7s infinite;
+    }
+
+    @keyframes rainbowShadow {
+      0% {
+        box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.8); /* Red */
+      }
+      16% {
+        box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.8); /* Orange */
+      }
+      33% {
+        box-shadow: 0 0 10px 2px rgba(255, 255, 0, 0.8); /* Yellow */
+      }
+      50% {
+        box-shadow: 0 0 10px 2px rgba(0, 128, 0, 0.8); /* Green */
+      }
+      66% {
+        box-shadow: 0 0 10px 2px rgba(0, 0, 255, 0.8); /* Blue */
+      }
+      83% {
+        box-shadow: 0 0 10px 2px rgba(75, 0, 130, 0.8); /* Indigo */
+      }
+      100% {
+        box-shadow: 0 0 10px 2px rgba(238, 130, 238, 0.8); /* Violet */
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="location">Sydney, RU</div>
+        <div class="logo">
+          <img class="animated-rainbow" src="https://i.imgur.com/yhnwhe1.png" />
+          <div>Lucas</div>
+        </div>
+        <div class="menu">
+          <a class="active">Home</a>
+          <a>My Games</a> <a>My Friend List</a>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div class="summary-item">
+          <div class="summary-item-title">Watched</div>
+          <div class="summary-item-content">
+            <div>
+              <div class="summary-item-number">237</div>
+              <div class="summary-item-text">Movies</div>
+            </div>
+
+            <div>
+              <div class="summary-item-number">23</div>
+              <div class="summary-item-text">series</div>
+            </div>
+
+            <div>
+              <div class="summary-item-number">05</div>
+              <div class="summary-item-text">Docs</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <div class="summary-item-title">Games Played</div>
+          <div class="summary-item-content">
+            <div>
+              <div class="summary-item-number">150</div>
+              <div class="summary-item-text">Action</div>
+            </div>
+
+            <div>
+              <div class="summary-item-number">45</div>
+              <div class="summary-item-text">RPG</div>
+            </div>
+
+            <div>
+              <div class="summary-item-number">02</div>
+              <div class="summary-item-text">Fps</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <div class="summary-item-title">Time spent sleeping</div>
+          <div class="summary-item-content">
+            <div>
+              <div class="summary-item-number">05</div>
+              <div class="summary-item-text">Years</div>
+            </div>
+
+            <div>
+              <div class="summary-item-number">04</div>
+              <div class="summary-item-text">Months</div>
+            </div>
+
+            <div>
+              <div class="summary-item-number">15</div>
+              <div class="summary-item-text">Days</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="facts">
+        <div class="facts-image">
+          <img
+            src="https://media3.giphy.com/media/leuNkvf9pE6loEnjnb/source.gif"
+          />
+        </div>
+        <div class="facts-content">
+          <div class="facts-title">True fact</div>
+          <div>True fact</div>
+          <ul>
+            <li>Gymer by morning</li>
+            <li>Coder by day</li>
+            <li>Gamer by night</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="favourite">
+        <div class="favourite-title">My favourite videos</div>
+
+        <div class="favourite-content">
+          <div>
+            <iframe class="animated-rainbow"></iframe>
+          </div>
+
+          <div>
+            <iframe class="animated-rainbow"></iframe>
+          </div>
+
+          <div>
+            <iframe class="animated-rainbow"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
