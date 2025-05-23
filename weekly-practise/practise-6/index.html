@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>HTML Template</title>
+ </head>
+ <body>
+    <button class="button1" onclick="changer()">Click me</button>
+
+    <input class="copy"/>
+    <button class="button2" onclick="echo()">Echo</button>
+    <p class="paragraph"></p>
+
+    <img src="https://th.bing.com/th/id/OIP.jcaFMsYgESZ69k-WwkaevAHaI4?w=140&h=185&c=7&r=0&o=5&dpr=1.5&pid=1.7"/>
+    <button class="button3" onclick="zoom()">Zoom in</button>
+    <button class="button4" onclick="out()">Zoom out</button>
+
+  <script>
+    function changer() {
+      let button = document.querySelector('.button1');
+      button.innerHTML = "Clicked"
+    }
+
+    function echo() {
+      let input = document.querySelector('.copy');
+      let inputValue = input.value;
+      let p = document.querySelector('.paragraph');
+      p.innerHTML = inputValue
+    }
+
+    function zoomin() {
+        
+    }
+
+  </script>
+ </body>
+</html>
