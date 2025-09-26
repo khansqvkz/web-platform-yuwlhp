@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+    }
+    .red {
+      background-color: red;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+
+    .orange {
+      background-color: orange;
+    }
+  </style>
+  <body>
+    <button class="button1" onclick="changeButton()">Click Me!</button>
+
+    <input class="repeat" />
+    <button onclick="inputEcho()">Echo</button>
+    <p></p>
+
+    <div class="box"></div>
+    <button onclick="colorChange('red')">red</button>
+    <button onclick="colorChange('blue')">blue</button>
+    <button onclick="colorChange('yellow')">yellow</button>
+    <button onclick="colorChange('green')">green</button>
+    <button onclick="colorChange('orange')">orange</button>
+
+    <script>
+      function changeButton() {
+        let button = document.querySelector('.button1');
+        button.innerHTML = 'Click';
+      }
+
+      function inputEcho() {
+        let input = document.querySelector('.repeat');
+        let inputValue = input.value;
+        let paragraph = document.querySelector('.p');
+        p.innerHTML = inputValue;
+      }
+      let previousColor;
+      function colorChange() {
+        let box = document.querySelector('.box');
+        box.classListadd(color);
+        box.classList.remove(perviousColor);
+        previousColor = color;
+      }
+    </script>
+  </body>
+</html>

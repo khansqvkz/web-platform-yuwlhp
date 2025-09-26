@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>HTML Template</title>
+   <style>
+    .button1 {
+        width: 300px;
+        height: 35px; 
+        margin-left: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        font-size: 15px;
+    }
+
+    .uppercasechanger {
+        height: 25px;
+        border-radius: 5px;
+        width: 250px;
+        
+    }
+
+    .result {
+    }
+
+    .body {
+       display: flex;
+       text-align: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        
+    }
+   </style>
+ </head>
+ <body>
+    <div class="container">
+    <div>Convert Text to Uppercase</div>
+    <div><input class="uppercasechanger" type="text" placeholder="Enter text here"></div>
+    <div><button onclick="uppercase()" class="button1">Convert to uppercase</button></div>
+    <div class="result"></div>
+    </div>
+
+    <script>
+        function uppercase() {
+          let input = document.querySelector('.uppercasechanger');
+          let inputValue = input.value.toUpperCase();
+          let result = document.querySelector('.result')
+          result.innerHTML = `${input.value.toUpperCase()}`;
+        }
+    </script>
+ </body>
+</html>

@@ -1,36 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
- <head>
-   <title>HTML Template</title>
- </head>
- <body>
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .default {
+        width: 300px;
+      }
+
+      .zoom-in {
+        width: 600px;
+      }
+
+      .zoom-out {
+        width: 150px;
+      }
+
+      .box {
+        border: solid 1px;
+        width: 100px;
+        height: 100px;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+
+      .red {
+        background-color: red;
+      }
+      
+      .green {
+        background-color: green;
+      }
+
+      .yellow {
+        background-color: yellow;
+      }
+
+      .orange {
+        background-color: orange;
+      }
+      
+    </style>
+  </head>
+  <body>
     <button class="button1" onclick="changer()">Click me</button>
 
-    <input class="copy"/>
+    <input class="copy" />
     <button class="button2" onclick="echo()">Echo</button>
     <p class="paragraph"></p>
 
-    <img src="https://th.bing.com/th/id/OIP.jcaFMsYgESZ69k-WwkaevAHaI4?w=140&h=185&c=7&r=0&o=5&dpr=1.5&pid=1.7"/>
+    <img
+      class="my-img default"
+      src="https://th.bing.com/th/id/OIP.jcaFMsYgESZ69k-WwkaevAHaI4?w=140&h=185&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+    />
     <button class="button3" onclick="zoom()">Zoom in</button>
     <button class="button4" onclick="out()">Zoom out</button>
 
-  <script>
-    function changer() {
-      let button = document.querySelector('.button1');
-      button.innerHTML = "Clicked"
-    }
+  <div>
+    <div class="box"></div> 
+    <button class="button1" onclick="changeColor('blue')">blue</button>
+    <button class="button2" onclick="changeColor('red')">red</button>
+    <button class="button3" onclick="changeColor('green')">green</button>
+    <button class="button4" onclick="changeColor('yellow')">yellow</button>
+    <button class="button5" onclick="changeColor('orange')">orange</button>
+  </div>
+    <script>
+      function changer() {
+        let button = document.querySelector('.button1');
+        button.innerHTML = 'Clicked';
+      }
 
-    function echo() {
-      let input = document.querySelector('.copy');
-      let inputValue = input.value;
-      let p = document.querySelector('.paragraph');
-      p.innerHTML = inputValue
-    }
+      function echo() {
+        let input = document.querySelector('.copy');
+        let inputValue = input.value;
+        let p = document.querySelector('.paragraph');
+        p.innerHTML = inputValue;
+      }
 
-    function zoomin() {
-        
-    }
+      function zoom() {
+        let img = document.querySelector('.my-img');
+        if (img.classList.contains('default')) {
+          img.classList.remove('default');
+          img.classList.add('zoom-in');
+        } else {
+          img.classList.remove('out');
+          img.classList.add('default');
+        }
+      }
 
-  </script>
- </body>
+      function out() {
+        let img = document.querySelector('.my-img');
+        if (img.classList.contains('default')) {
+          img.classList.remove('default');
+          img.classList.add('out');
+        } else {
+          img.classList.remove('zoom-in');
+          img.classList.add('default');
+        }
+      }
+
+      let previousColor;
+      function changeColor(color) {
+        let box = document.querySelector('.box');
+        box.classList.remove(previousColor)
+        box.classList.add(color);
+        previousColor = color 
+      }
+    </script>
+  </body>
 </html>

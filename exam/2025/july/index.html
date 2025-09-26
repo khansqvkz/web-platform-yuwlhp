@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+
+      .green {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="message()">Show me pop up</button>
+
+    <div class="box"></div>
+    <button onclick="changeColor('red')">RED</button>
+    <button onclick="changeColor('blue')">BLUE</button>
+    <button onclick="changeColor('green')">GREEN</button>
+
+    <input class="input1" type="number" min="0" max="10" />
+    <button onclick="resultfinder()">Check result</button>
+    <div class="cheese">Grade result</div>
+
+    <button onclick="multipulnumbers()">Print numbers</button>
+    <script>
+      function message() {
+        alert('Hello world');
+      }
+
+      let previousColor;
+      function changeColor(color) {
+        let box = document.querySelector('.box');
+        box.classList.remove(previousColor);
+        box.classList.add(color);
+        previousColor = color;
+      }
+
+      function resultfinder() {
+        let input = document.querySelector('.input1');
+        inputValue = input.value;
+        let result = document.querySelector('.cheese');
+        if (inputValue == 10) {
+          result.innerHTML = `Fantastic!`;
+        } else if (inputValue >= 7 && inputValue <= 9) {
+          result.innerHTML = `Great Job!`;
+        } else if (inputValue >= 4 && inputValue <= 6) {
+          result.innerHTML = `Great Job!`;
+        } else if (inputValue >= 1 && inputValue <= 3) {
+          result.innerHTML = `Great Job!`;
+        } else {
+          result.innerHTML = `I give up`;
+        }
+      }
+      let number = [53, 1, 100, 99, 29, 50, 28];
+
+      function multipulnumbers() {
+        for (let i = 0; i < number.length; i++) {
+          console.log(`Number ${i + 1} is ${number[i]}`);
+        }
+      }
+    </script>
+  </body>
+</html>

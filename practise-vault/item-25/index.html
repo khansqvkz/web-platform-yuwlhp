@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+
+      .calculatorbutton {
+        display: flex;
+      }
+      .calbuttons {
+        width: 100px;
+        height: 50px;
+        border-radius: 5px;
+        font-size: 20px;
+        border: none;
+        margin: 1px;
+        background-color: #dbdce0;
+      }
+
+      .header {
+        position: relative;
+        width: 410px;
+        height: 20px;
+        border: 1px solid lightgray;
+        margin-bottom: 70px;
+      }
+      .calscreen {
+        text-align: right;
+        height: 80px;
+        width: 405px;
+      }
+
+      .btn-del {
+        background-color: red;
+        color: white;
+      }
+
+      .btn-equal {
+        background-color: blue;
+        color: white;
+      }
+
+      .calbuttons:hover {
+        background-color: #4d4e52;
+        color: white;
+      }
+
+      .historyimg {
+        width: 30px;
+      }
+
+      .history {
+        position: absolute;
+        z-index: 1;
+        left: 2px;
+        top: 2px;
+        border: none;
+      }
+
+      .calhistory {
+        border: none;
+        border-radius: 5px;
+      }
+
+      .history ul {
+        border: 1px solid black;
+        margin-top: 0px;
+        list-style-type: none;
+        padding: 5px;
+        min-width: 100px;
+      }
+      .history li {
+        padding: 1px;
+      }
+      .history li:hover {
+        background-color: lightgray;
+        cursor: pointer;
+      }
+
+      .show-history ul {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="header">
+        <div class="equation"></div>
+        <input class="calscreen" type="text" />
+        <div class="history">
+          <button class="calhistory" onclick="historybutton()">
+            <img
+              class="historyimg"
+              src="data:image/webp;base64,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"
+            />
+          </button>
+          <ul>
+            <li>1+2</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="calculatorbutton">
+        <div class="row1">
+          <button class="calbuttons" onclick="onCalculatorButtonClick( '(' )">
+            (
+          </button>
+          <button class="calbuttons" onclick="onCalculatorButtonClick( ')' )">
+            )
+          </button>
+          <button
+            class="calbuttons btn-del"
+            onclick="onCalculatorButtonClick('DEL')"
+          >
+            DEL
+          </button>
+          <button class="calbuttons" onclick="onCalculatorButtonClick('AC')">
+            AC
+          </button>
+        </div>
+      </div>
+      <div class="row2">
+        <button class="calbuttons" onclick="onCalculatorButtonClick('7')">
+          7
+        </button>
+        <button class="calbuttons" onclick="onCalculatorButtonClick('8')">
+          8
+        </button>
+        <button class="calbuttons" onclick="onCalculatorButtonClick('9')">
+          9
+        </button>
+        <button class="calbuttons" onclick="onCalculatorButtonClick('/')">
+          /
+        </button>
+      </div>
+      <div class="row3">
+        <button class="calbuttons" onclick="onCalculatorButtonClick('4')">
+          4
+        </button>
+        <button class="calbuttons" onclick="onCalculatorButtonClick('5')">
+          5
+        </button>
+        <button class="calbuttons" onclick="onCalculatorButtonClick('6')">
+          6
+        </button>
+        <button class="calbuttons" onclick="onCalculatorButtonClick('*')">
+          *
+        </button>
+      </div>
+      <div class="row4">
+        <button class="calbuttons" onclick="onCalculatorButtonClick('1')">
+          1
+        </button>
+        <button class="calbuttons" onclick="onCalculatorButtonClick('2')">
+          2
+        </button>
+        <button class="calbuttons" onclick="onCalculatorButtonClick('3')">
+          3
+        </button>
+        <button class="calbuttons" onclick="onCalculatorButtonClick('-')">
+          -
+        </button>
+      </div>
+      <div class="row5">
+        <button class="calbuttons" onclick="onCalculatorButtonClick('0')">
+          0
+        </button>
+        <button class="calbuttons" onclick="onCalculatorButtonClick('.')">
+          .
+        </button>
+        <button
+          class="calbuttons btn-equal"
+          onclick="onCalculatorButtonClick('=')"
+        >
+          =
+        </button>
+        <button class="calbuttons" onclick="onCalculatorButtonClick('+')">
+          +
+        </button>
+      </div>
+    </div>
+    <script>
+      function onCalculatorButtonClick(action) {
+        let input = document.querySelector('.calscreen');
+        let header = document.querySelector('.header');
+        let equation = document.querySelector('.equation');
+        if (action === 'AC') {
+          input.value = '';
+        } else if (action === '=') {
+          equation.innerHTML = input.value;
+          input.value = eval(input.value);
+        } else if (action === 'DEL') {
+          input.value = input.value.slice(0, -1);
+        } else {
+          input.value = input.value + action;
+        }
+      }
+
+      function histtorybutton() {
+        let history = document.querySelector('.history');
+        history.classList.toggle('show-history');
+      }
+    </script>
+  </body>
+</html>

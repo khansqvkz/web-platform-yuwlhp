@@ -1,30 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
- <head>
-   <meta name="robots" content="noindex" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <title>Blue riding hood</title>
-   <link rel="stylesheet" type="text/css" href="global.css" />
-   <link rel="stylesheet"     href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-   <style>
-   </style>
- </head>
- <body class="indie-flower-regular">
-   <div class="container">
-     <div class="page page-6 tilt-in-fwd-tr">
-     <div class="title1">
-        <span class="blue">Blue</span> Riding Hood enters Grandma'a room and starts questioning why her grandma looks so different!
+  <head>
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue riding hood</title>
+    <link rel="stylesheet" type="text/css" href="global.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <style>
+      .background {
+        width: 100%;
+        padding-top: 20px;
+      }
+
+      .title1 {
+        padding-bottom: 20px;
+      }
+
+      .room {
+        position: relative;
+      }
+
+      .bluehood {
+        width: 150px;
+        position: absolute;
+        left: 20px;
+        bottom: 50px;
+      }
+
+      .wolf {
+        width: 300px;
+        position: absolute;
+        right: 100px;
+        bottom: 20px;
+      }
+
+      .text1 {
+        font-size: 20px;
+        left: 20px;
+        bottom: 250px;
+        position: absolute;
+        padding: 40px;
+        background-color: rgba(255, 255, 255, 0.881);
+        border-radius: 5px;
+      }
+
+      .text2 {
+        position: absolute;
+        font-size: 20px;
+        padding: 40px;
+        right: 20px;
+        top: 100px;
+        background-color: rgba(255, 255, 255, 0.881);
+        border-radius: 5px;
+      }
+
+      .text3 {
+        position: absolute;
+        font-size: 20px;
+        padding: 35px;
+        right: 320px;
+        bottom: 170px;
+        background-color: rgba(255, 255, 255, 0.881);
+        border-radius: 5px;
+      }
+
+      .text4 {
+        position: absolute;
+        font-size: 20px;
+        right: 400px;
+        bottom: 50px;
+        background-color: rgba(255, 255, 255, 0.881);
+        padding: 30px;
+        border-radius: 5px;
+      }
+
+      .section:hover {
+        animation: 0.5s scale-up-center forwards;
+        z-index: 10;
+      }
+
+      @keyframes scale-up-center {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+     button a {
+      text-decoration: none;
+      color: black;
+     } 
+    </style>
+  </head>
+  <body class="indie-flower-regular">
+    <div class="container">
+      <div class="page page-6 tilt-in-fwd-tr">
+        <div class="title1">
+          <span class="blue">Blue</span> Riding Hood enters Grandma'a room and
+          starts questioning why her grandma looks so different!
         </div>
-    
-     <div class="text-bold">
-        <div>As the big bad wolf, how would you answer?</div>
-     </div>
 
-     <div class="room">
-       <img src="https://img.freepik.com/free-vector/house-attic-interior-empty-old-mansard-room_107791-16776.jpg?w=1380"/>
-     </div>
+        <div class="text-bold">
+          <div>As the big bad wolf, how would you answer?</div>
+        </div>
 
-     </div>
-   </div>
- </body>
+        <div class="room">
+          <img
+            class="background"
+            src="https://img.freepik.com/free-vector/house-attic-interior-empty-old-mansard-room_107791-16776.jpg?w=1380"
+          />
+
+          <img
+            class="bluehood"
+            src="https://labs.learnosity.com/solutions/sales-enablement/custom-ui/blue-riding-hood/assets/img/sadblueridinghood.png"
+          />
+
+          <img
+            class="wolf"
+            src="https://labs.learnosity.com/solutions/sales-enablement/custom-ui/blue-riding-hood/assets/img/wolfgrandma.png"
+          />
+          <button class="text1 indie-flower-regular section">
+            Grandma, what happened to you?
+          </button>
+          
+          <button class="text2 animated-rainbow indie-flower-regular section">
+            <a href="page-7.html">I went clubbing too hard last night!</a>
+          </button>
+          <button class="text3 animated-rainbow indie-flower-regular section">
+            <a href="">I just feel so OLD!</a>
+          </button>
+          <button class="text4 animated-rainbow indie-flower-regular section">
+            <a href="">Maybe it's the weather...?</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

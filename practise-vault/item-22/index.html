@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .colorchange {
+        width: 300px;
+        height: 40px;
+        background-color: white;
+        color: #007bff;
+        border: 1px solid #007bff;
+        font-size: 15px;
+        border-radius: 10px;
+      }
+      .sizechange {
+        width: 250px;
+        height: 40px;
+        background-color: white;
+        color: #ff8c00;
+        border: 1px solid #ff8c00;
+        font-size: 15px;
+        border-radius: 10px;
+      }
+
+      .hidebox {
+        width: 130px;
+        height: 40px;
+        background-color: white;
+        color: #d90000;
+        border: 1px solid #d90000;
+        font-size: 15px;
+        border-radius: 10px;
+      }
+
+      .default {
+        background-color: lightgrey;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+      }
+
+      .normalsize {
+        width: 200px;
+        height: 200px;
+      }
+
+      .bigsize {
+        width: 400px;
+        height: 400px;
+      }
+
+      .invisible {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="colorchange" onclick="changecolor()">
+      Change the box background to "red"
+    </button>
+    <button class="sizechange" onclick="changesize()">
+      Make the box become bigger
+    </button>
+    <button class="hidebox" onclick="boxhide()">Hide the box</button>
+    <div class="box default normalsize visible"></div>
+
+    <script>
+      function changecolor() {
+        let box = document.querySelector('.box');
+        let colorchange = document.querySelector('.colorchange');
+        if (box.classList.contains('red')) {
+          box.classList.remove('red');
+          colorchange.innerHTML = 'Change the box background to red';
+        } else box.classList.add('red');
+        colorchange.innerHTML = 'Change the box background to default color';
+      }
+
+      function changesize() {
+        let box = document.querySelector('.box');
+        let sizechange = document.querySelector('.sizechange');
+        if (box.classList.contains('bigsize')) {
+          box.classList.remove('bigsize');
+          sizechange.innerHTML = "Make the box becomes bigger";
+        } else box.classList.add('bigsize');
+        sizechange.innerHTML = "Make the box goes back to its default size";
+      }
+
+      function boxhide() {
+        let box = document.querySelector('.box');
+        if (box.classList.contains('invisible')) {
+          box.classList.remove('invisible');
+        } else box.classList.add('invisible');
+      }
+    </script>
+  </body>
+</html>

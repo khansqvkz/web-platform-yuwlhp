@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>HTML Template</title>
+   <style>
+    .button1 {
+        width: 200px;
+        height: 50px;
+        font-size: 15px;
+        border-radius: 8px;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        position: absolute;
+    }
+
+     .container {
+      display: flex;
+      position: relative;
+      justify-content: center;
+     }
+   </style>
+ </head>
+ <body>
+  <div class="container">
+    <button class="button1" onclick="showsAlert()">Click me to open an alert</button>
+    </div>
+
+    <script>
+        function showsAlert() {
+           alert('Button Clicked');
+        }
+    </script>
+ </body>
+</html>

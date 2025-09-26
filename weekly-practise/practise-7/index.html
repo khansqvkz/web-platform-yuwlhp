@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <button onclick="message()">Click</button>
+    <input class="input" />
+
+    <button onclick="numberChecker()">Check</button>
+    <input type="number" />
+
+    <button onclick="colorList()">Last color</button>
+
+    <button onclick="thingsList()">Favourite</button>
+    <div class="list">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
+    <button onclick="numberSum()">Sum of Number</button>
+    <div class="result"></div>
+
+    <button onclick="getLargestNumber()">Get the largest number</button>
+
+    <script>
+      function message() {
+        // select the input
+        // get the value of the input, save it to a variable
+        // alert the input value
+
+        let input = document.querySelector('.input');
+        let inputValue = input.value;
+        alert(inputValue);
+      }
+
+      function numberChecker() {
+        let input = document.querySelector('.input');
+        let inputValue = input.value;
+        if (inputValue > 10) {
+          alert('Your number is below 10');
+        } else if (inputValue < 10) {
+          alert('Your number is above 10');
+        } else {
+          alert('Your number is on 10');
+        }
+      }
+
+      const colors = ['Red', 'Blue', 'Green', 'abc'];
+      function colorList() {
+        let lastIndex = colors.length - 1;
+        let lastColor = colors[lastIndex];
+
+        alert(lastColor);
+      }
+
+      const things = ['books', 'games', 'movies'];
+      function thingsList() {
+        let list = document.querySelector('.list');
+        list.innerHTML = `<ul>
+            <li>${things[0]}</li>
+            <li>${things[1]}</li>
+            <li>${things[2]}</li>
+        </ul>
+        <div>The total number of items is: ${things.length}</div>`;
+      }
+
+      let numbers = [20, 55, 135];
+      function numberSum() {
+        let result = document.querySelector('.result');
+        let total = numebers[0] + numbers[1] + numebers[2];
+        result.innerHTML = `The total sum is ${total}`;
+      }
+
+      let randomNumbers = [53, 1, 101, 99, 100];
+      function getLargestNumber() {
+        let currentlargestnumber = randomNumbers[0];
+
+        if (currentlargestnumber < randomNumbers[0]) {
+          currentlargestnumber = randomNumbers[1];
+        }
+        if (currentlargestnumber < randomNumbers[2]) {
+          currentlargestnumber = randomNumbers[2];
+        }
+        if (currentlargestnumber < randomNumbers[3]) {
+          currentlargestnumber = randomNumbers[3];
+        }
+        if (currentlargestnumber < randomNumbers[4]) {
+          currentlargestnumber = randomNumbers[4];
+        }
+        if (currentlargestnumber < randomNumbers[5]) {
+          currentlargestnumber = randomNumbers[5];
+        }
+        alert(currentlargestnumber);
+      }
+
+      for (let i=0; i < 10; i++) {
+        console.log('iam IronMan')
+      }
+    </script>
+  </body>
+</html>
