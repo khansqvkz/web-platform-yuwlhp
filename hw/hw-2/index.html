@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <input class="filter-input" type="number" />
+    <button onclick="system()"></button>
+    <ul class="filter-ul"></ul>
+
+    <button onclick="sumnumbers()">Sum all numbers</button>
+    <div class="result"></div>
+
+    <button onclick="reverse()">Reverse Order</button>
+    <div class="reversedresult"></div>
+    <script>
+      function system() {
+        let listHTML = '';
+        let items = ['cat', 'dog', 'elephant', 'bird', 'fish'];
+        let inputValue = document.querySelector('.filter-input').value;
+        let list = document.querySelector('.filter-ul');
+
+        for (let i = 0; i < items.length; i++) {
+          let currentItem = items[i];
+          let currentItemLength = currentItem.length;
+          if (currentItemLength > inputValue) {
+            console.log('filterd item', currentItem);
+            listHTML = listHTML + `<li>${currentItem}</li>`;
+          }
+        }
+        list.innerHTML = listHTML;
+      }
+
+      function sumnumbers() {
+        let sum = 0;
+        let items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let result = document.querySelector('.result');
+
+        for(let i = 0; i < itmes.length; i++) {
+             sum = sum + items[i];
+             result.innerHTML = `Sum: ${sum}`;
+        }
+      }
+
+      function reverse() {
+        let result = '';
+        let items = [10, 10, 30, 40, 50];
+        let reversedresult = document.querySelector('.reversedresult');
+        for(let i = 0; i < itmes.length -1; i--) {
+          result = result + items[i];
+           reversedresult.innerHTML = `${items}`;
+        }
+      }
+    </script>
+  </body>
+</html>

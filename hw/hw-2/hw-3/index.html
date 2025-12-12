@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <div class="content">Content hidden</div>
+    <button class="namedetails" onclick="details()">Show Details</button>
+
+    <h1>Enter and Submit Your Details</h1>
+
+    <div>
+      <div>
+        <div>First name</div>
+        <input class="input-first-name" placeholder="First Name" />
+      </div>
+      <div>
+        <div>Last name</div>
+        <input class="input-last-name" placeholder="Last Name" />
+      </div>
+      <div>
+        <div>Age</div>
+        <input class="input-age" placeholder="Age" />
+      </div>
+      <div>
+        <div>Occupation</div>
+        <input class="input-occupation" placeholder="Occupation" />
+      </div>
+      <div>
+        <div>Avatar URL</div>
+        <input class="input-avatar-url" placeholder="https://..." />
+      </div>
+
+      <button class="button1" onclick="profitdetails()">Submit</button>
+    </div>
+    <div class="detailresult"></div>
+
+    <h1>List of Profilies</h1>
+    <button onclick="profiles()">Print Profilies</button>
+    <div class="allProfiles"></div>
+
+    <script>
+      let isDetailsVisible = false;
+      function details() {
+        let person = {
+          firstName: 'Lucas',
+          lastName: 'Nguyen',
+          age: 14,
+          occupation: 'Software engineer',
+        };
+        let contentContainer = document.querySelector('.content');
+        let namedetails = document.querySelector('.namedetails');
+        if (isDetailsVisible == false) {
+          contentContainer.innerHTML = `
+          <div>Name: ${person.firstName} ${person.lastName}</div>
+          <div>Age : ${person.age}</div>
+          <div>Occupation: ${person.occupation}</div>`;
+          namedetails.innerHTML = `Hide Details`;
+          isDetailsVisible = true;
+        } else if (isDetailsVisible == true) {
+          isDetailsVisible = false;
+          namedetails.innerHTMl = `Show Details`;
+          contentContainer.innerHTML = `Content hidden`;
+        }
+      }
+
+      function profitdetails() {
+        let inputFirstName = document.querySelector('.input-first-name');
+        let inputLastName = document.querySelector('.input-last-name');
+        let inputAge = document.querySelector('.input-age');
+        let inputOccupation = document.querySelector('.input-occupation');
+        let inputAvatarURL = document.querySelector('.input-avatar-url');
+        let detailresult = document.querySelector('.detailresult');
+        let person = {
+          firstName: inputFirstName.value,
+          lastName: inputLastName.value,
+          age: inputAge.value,
+          occupation: inputOccupation.value,
+          avatarURL: inputAvatarURL.value,
+        };
+        detailresult.innerHTML = `
+        <h1>Profile Details</h1>
+        <div>Name: ${person.firstName} ${person.lastName}</div>
+        <div>Age: ${person.age}</div>
+        <div>Occupation: ${person.occupation}</div>
+        <img src="${person.avatarURL}"/>
+        `;
+      }
+
+      function profiles() {
+        let profiles = [
+          {
+            fullName: 'Alice Johnson',
+            gender: 'Female',
+            occupation: 'Web Developer',
+            avatar: {
+              images: {
+                large:
+                  'https://t3.ftcdn.net/jpg/05/98/48/88/360_F_598488869_fiLUgajDxyaoxE9D3SuHMZfD56IjrBXe.jpg',
+              },
+            },
+          },
+          {
+            fullName: 'Bob Smith',
+            gender: 'Male',
+            occupation: 'Graphic Designer',
+            avatar: {
+              images: {
+                large:
+                  'https://sm.ign.com/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.jpg',
+              },
+            },
+          },
+          {
+            fullName: 'Carol White',
+            gender: 'Female',
+            occupation: 'Project Manager',
+            avatar: {
+              images: {
+                large:
+                  'https://t3.ftcdn.net/jpg/05/98/48/88/360_F_598488869_fiLUgajDxyaoxE9D3SuHMZfD56IjrBXe.jpg',
+              },
+            },
+          },
+          {
+            fullName: 'Dave Brown',
+            gender: 'Male',
+            occupation: 'Software Engineer',
+            avatar: {
+              images: {
+                large:
+                  'https://sm.ign.com/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.jpg',
+              },
+            },
+          },
+        ];
+        let allProfiles = document.querySelector('.allProfiles');
+        allProfiles.innerHTML = '';
+        // step 1 - loop through each profiles
+        for (let i = 0; i < profiles.length; i++) {
+          //step 2 - get the current profiles at the index
+           let currentProfile = profiles[i];
+           console.log(`profile at ${i}`, currentProfile);
+           //step 3 - create a new div content containing the profile inforamtion
+           let content = `
+           <div>
+            <img src="${currentProfile.avatar.images.large}"/>
+            <div>
+              <div>${currentProfile.firstName}</div>
+              <div>${currentProfile.gender}</div>
+              <div>${currentProfile.occupation}</div>
+            </div>
+           </div>
+           `;
+           allProfiles.innerHTML= allProfiles.innerHTML + content; //x = x + new_number
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <button onclick="tellMeMore(lucas)">Show details</button>
+    <div class="result"></div>
+    <script>
+      let lucas = {
+        name: 'Lucas',
+        age: 14,
+        gender: 'Male',
+      };
+      function tellMeMore(person) {
+        console.log(`My name is ${person.name}`);
+        console.log(`Iam ${person.age}`);
+        if (person.age < 18) {
+          console.log(`Iam Unemplyed`);
+        } else if (person.age > 18 && person.age < 65) {
+          console.log(`Iam employed`);
+        } else {
+            (person.age > 65)
+            console.log(`Iam retired`)
+        }
+    }
+    </script>
+  </body>
+</html>

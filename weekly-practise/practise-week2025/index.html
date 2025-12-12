@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <button onclick="numbers()">Print from 0 to 1000</button>
+    <ul class="list"></ul>
+
+    <input class="searchInput" type="text" />
+    <button onclick="search()">Search</button>
+
+    <input class="filter-input" type="number" />
+    <button onclick="filtersystem()">Filter</button>
+    <ul class="filter-list"></ul>
+
+    <script>
+      function numbers() {
+        let ul = document.querySelector('.list');
+        let content = '';
+        for (let i = 0; i <= 1000; i++) {
+          console.log(i);
+          content = content + `<li>${i}</li>`;
+        }
+        console.log(content);
+        ul.innerHTML = content;
+      }
+
+      function search() {
+        let items = ['apple', 'banana', 'cherry'];
+        let input = document.querySelector('.searchInput');
+        let inputValue = input.value;
+        let hasItemFound = false;
+        for (let i = 0; i <= items.length; i++) {
+          let currentItem = items[i];
+
+          if (currentItem === inputValue) {
+            hasItemFound = true;
+          }
+        }
+        if (hasItemFound) {
+          alert('Item found');
+        } else {
+          alert('Not found');
+        }
+      }
+
+      function filtersystem() {
+        let listHTML = '';
+        let items = ['cat', 'dog', 'elephant', 'bird', 'fish'];
+        let inputValue = document.querySelector('.filter-input').value;
+        let list = document.querySelector('.filter-list');
+
+        for (let i = 0; i < items.length; i++) {
+          let currentItem = items[i];
+          let currentItemLength = currentItem.length;
+          if (currentItemLength > inputValue) {
+            console.log('filterd item', currentItem);
+            listHTML = listHTML + `<li>${currentItem}</li>`;
+          }
+        }
+        list.innerHTML = listHTML;
+      }
+    </script>
+  </body>
+</html>

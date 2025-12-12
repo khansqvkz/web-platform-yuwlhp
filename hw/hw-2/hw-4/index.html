@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .red {
+        background-color: red;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .green {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .indigo {
+        background-color: indigo;
+      }
+      .violet {
+        background-color: violet;
+      }
+
+      .colorchange {
+        border-radius: 15px;
+        width: 150px;
+        height: 30px;
+        color: white;
+        background-color: #333;
+        border: none;
+        transition: all 0.3;
+      }
+    </style>
+  </head>
+  <body class="red">
+      <button class="colorchange" onclick="change()">Change the color</button>
+    <script>
+      let colorIndex = 0;
+      let colors = ["red","orange","yellow","green","blue","indigo","violet"];
+      function change() {
+        let body = document.querySelector('body');
+        let color = colors[colorIndex];
+        body.classList.remove(color);
+        colorIndex = colorIndex + 1;
+        if (colorIndex === colors.length) {
+          colorIndex = 0;
+        }
+        color = colors[colorIndex];
+        body.classList.add(color);
+      }
+    </script>
+  </body>
+</html>
