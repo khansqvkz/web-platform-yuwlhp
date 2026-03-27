@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style></style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title pb-2">List Profiles</h5>
+          <button type="button" class="btn btn-secondary" onclick="profiles()">
+            Print Profiles
+          </button>
+        </div>
+      </div>
+
+      <div class="users">
+        <div class="row gx-5 profileResult">
+          <div class="col-3">
+            
+            <div class="p-3">
+              <div class="card shadow">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img
+                      src="https://t3.ftcdn.net/jpg/05/98/48/88/360_F_598488869_fiLUgajDxyaoxE9D3SuHMZfD56IjrBXe.jpg"
+                      class="img-fluid rounded-circle"
+                    />
+                  </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <p class="card-text">Name: Alice Johnson</p>
+                      <p class="card-text">Gender: Female</p>
+                      <p class="card-text">Occupation: Web Developer</p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function profiles() {
+        let profiles = [
+          {
+            fullName: 'Alice Johnson',
+            gender: 'Female',
+            occupation: 'Web Developer',
+            avatar: {
+              images: {
+                large:
+                  'https://t3.ftcdn.net/jpg/05/98/48/88/360_F_598488869_fiLUgajDxyaoxE9D3SuHMZfD56IjrBXe.jpg',
+              },
+            },
+          },
+          {
+            fullName: 'Bob Smith',
+            gender: 'Male',
+            occupation: 'Graphic Designer',
+            avatar: {
+              images: {
+                large:
+                  'https://sm.ign.com/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.jpg',
+              },
+            },
+          },
+          {
+            fullName: 'Carol White',
+            gender: 'Female',
+            occupation: 'Project Manager',
+            avatar: {
+              images: {
+                large:
+                  'https://t3.ftcdn.net/jpg/05/98/48/88/360_F_598488869_fiLUgajDxyaoxE9D3SuHMZfD56IjrBXe.jpg',
+              },
+            },
+          },
+          {
+            fullName: 'Dave Brown',
+            gender: 'Male',
+            occupation: 'Software Engineer',
+            avatar: {
+              images: {
+                large:
+                  'https://sm.ign.com/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.jpg',
+              },
+            },
+          },
+        ];
+
+        let profileResult = document.querySelector('.profileResult');
+        profileResult.innerHTML = '';
+        for (let i = 0; i < profiles.length; i++) {
+          let currentProfile = profiles[i];
+          console.log(`profile at ${i}`, currentProfile);
+          let content = `
+          <div class="col-3">
+            <div class="p-3">
+              <div class="card shadow">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img
+                      src="${currentProfile.avatar.images.large}"
+                      class="img-fluid rounded-circle"
+                    />
+                  </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <p class="card-text">Name: ${currentProfile.fullName}</p>
+                      <p class="card-text">Gender: ${currentProfile.gender}</p>
+                      <p class="card-text">Occupation: ${currentProfile.occupation}</p>
+                    <button class="btn btn-primary">Show</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           `;
+          profileResult.innerHTML = profileResult.innerHTML + content;
+        }
+      }
+    </script>
+  </body>
+</html>
